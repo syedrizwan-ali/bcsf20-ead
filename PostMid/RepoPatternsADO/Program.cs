@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RepoPatternsADO.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace RepoPatternsADO
     {
         static void Main(string[] args)
         {
+            var repo = new UserRepository();
+            var roleRepo = new RoleRepository();
         }
     }
 }
