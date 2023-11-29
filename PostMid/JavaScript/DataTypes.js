@@ -32,3 +32,21 @@ console.log(dd);
 
 var ee = new Date(e);
 console.log(ee);
+
+////////////////////////
+
+var num = new Number("23400");
+console.log(num);
+
+var num01 = new Number("23400a"); //will return NaN
+
+var num02 = parseInt("23401a");
+console.log(num02);
+
+var num03 = new Number("3.5");
+console.log(num03);
+
+var num04 = new Number("3.5.1");
+
+var num05 = parseFloat("356.50123612361.1123132");
+console.log(num05);

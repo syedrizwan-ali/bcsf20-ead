@@ -1,5 +1,5 @@
 var obj1 = new Object(); //Explicit object creation
-var obj2 = {}; //implicit object creation
+var obj2 = {}; //implicit object creation, literal notation
 
 obj1["ID"] = 1;
 obj1.Name = "Ali";
