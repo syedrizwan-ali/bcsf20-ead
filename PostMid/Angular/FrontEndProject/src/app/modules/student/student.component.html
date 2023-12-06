@@ -1,6 +1,10 @@
+<h3>Students</h3>
+<p>someValue = {{someValue}} <br> outputFromCourse = {{outputFromCourse}}</p>
 <ul>
     @for (student of students; track $index) 
     {
         <li>{{student.RollNumber}} - {{student.Name}}</li>
     }
 </ul>
+
+<app-course (someOutput)="outPutListener($event)"></app-course>

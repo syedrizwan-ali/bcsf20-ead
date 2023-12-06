@@ -1,1 +1,7 @@
-<p>course works!</p>
+<h3>Courses</h3>
+
+<ul>
+    @for (course of courses; track $index) {
+        <li>{{course.Code}} - {{course.Name}}</li>
+    }
+</ul>
