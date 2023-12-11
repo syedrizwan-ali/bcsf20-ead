@@ -1,3 +1,4 @@
+import { StudentService } from './../../services/student.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Student } from '../../models/student';
 import { CourseComponent } from '../course/course.component';
@@ -13,20 +14,17 @@ import { CourseComponent } from '../course/course.component';
 export class StudentComponent implements OnInit{
   @Input() someValue!:Number;
 
-  public students: Student[];
+  public students?: Student[];
   public outputFromCourse!: Number;
 
-  constructor() {
-    this.students = [
-      new Student("Student 01", "Rollnumber01"),
-      new Student("Student 02", "Rollnumber02"),
-      new Student("Student 03", "Rollnumber03"),
-      new Student("Student 04", "Rollnumber04"),
-      new Student("Student 05", "Rollnumber05")
-    ];
+  constructor(private studentService : StudentService) {
+
   }
 
   ngOnInit(): void {
+    this.studentService.getStudents().subscribe((data: Student[]) => {
+      this.students = data;
+    }) ;
   }
 
   outPutListener(value: Number): void{
@@ -35,4 +33,9 @@ export class StudentComponent implements OnInit{
     console.log(value);
   }
 
+  getStudentData(id: number){
+    this.studentService.getStudent(id).subscribe((data: Student) => {
+      console.log(data);
+    });
+  }
 }

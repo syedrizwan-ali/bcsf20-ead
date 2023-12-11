@@ -1,0 +1,25 @@
+<h3>Cities</h3>
+
+<table>
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Created By</th>
+            <th>Created On</th>
+            <th>Modified By</th>
+            <th>Modified On</th>
+        </tr>
+        @for (city of cities; track $index) 
+        {
+            <tr>
+                <td>{{city.ID}}</td>
+                <td>{{city.Name}}</td>
+                <td>{{city.CreatedBy}}</td>
+                <td>{{city.CreatedOn}}</td>
+                <td>{{city.ModifiedBy}}</td>
+                <td>{{city.ModifiedOn}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
