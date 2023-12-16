@@ -8,7 +8,7 @@ import { Student } from '../models/student';
 })
 export class StudentService {
 
-  serviceUrl: string = "http://localhost:5000";
+  serviceUrl: string = "http://localhost:55555";
   constructor(private httpClient: HttpClient) { }
 
   getStudents():Observable<Student[]> {

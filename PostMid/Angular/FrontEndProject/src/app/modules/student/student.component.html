@@ -3,7 +3,8 @@
 <ul>
     @for (student of students; track $index) 
     {
-        <li>{{student.RollNumber}} - {{student.Name}} <a href="#" onclick="getStudentData($event)">Get</a> </li>
+        <li><a [routerLink]="['Edit/', student.ID]" >{{student.ID}}</a> {{student.RollNumber}} - {{student.Name}} 
+            <a [routerLink]="['View/', student.ID]" >View</a> | <a [routerLink]="['Delete/', student.ID]">Delete</a></li>
     }
 </ul>
 

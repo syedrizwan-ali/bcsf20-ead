@@ -8,7 +8,7 @@ import { Course } from '../../models/course';
   templateUrl: './course.component.html',
   styleUrl: './course.component.css'
 })
-export class CourseComponent implements OnInit{ 
+export class CourseComponent{ 
   @Output() someOutput = new EventEmitter<Number>();
 
   public courses: Course[];

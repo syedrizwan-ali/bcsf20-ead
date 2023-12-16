@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class CityService {
 
-  private serviceUrl: string = "http://localhost:5000/api";
+  private serviceUrl: string = "http://localhost:55555/api";
   constructor(private httpClient: HttpClient) { }
 
   getCities() : Observable<City[]>{

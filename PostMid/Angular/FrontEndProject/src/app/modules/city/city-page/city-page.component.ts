@@ -9,7 +9,7 @@ import { City } from '../../../models/general/city';
   templateUrl: './city-page.component.html',
   styleUrl: './city-page.component.css'
 })
-export class CityPageComponent implements OnInit{
+export class CityPageComponent{
   
   cities?: City[];
   constructor(private cityService: CityService) {

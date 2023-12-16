@@ -2,16 +2,17 @@ import { StudentService } from './../../services/student.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Student } from '../../models/student';
 import { CourseComponent } from '../course/course.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-student',
   standalone: true,
-  imports: [CourseComponent],
+  imports: [CourseComponent, RouterLink, RouterLinkActive],
   templateUrl: './student.component.html',
   styleUrl: './student.component.css'
 })
 
-export class StudentComponent implements OnInit{
+export class StudentComponent {
   @Input() someValue!:Number;
 
   public students?: Student[];
@@ -33,7 +34,7 @@ export class StudentComponent implements OnInit{
     console.log(value);
   }
 
-  getStudentData(id: number){
+  getStudentData($event: any, id: number){
     this.studentService.getStudent(id).subscribe((data: Student) => {
       console.log(data);
     });
