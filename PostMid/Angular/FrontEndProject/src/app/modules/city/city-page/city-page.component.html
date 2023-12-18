@@ -1,5 +1,6 @@
 <h3>Cities</h3>
 
+<a routerLink="Add/">Add</a>
 <table>
     <tbody>
         <tr>
@@ -9,16 +10,18 @@
             <th>Created On</th>
             <th>Modified By</th>
             <th>Modified On</th>
+            <th>Actions</th>
         </tr>
         @for (city of cities; track $index) 
         {
             <tr>
-                <td>{{city.ID}}</td>
+                <td><a [routerLink]="['Edit/', city.ID]">{{city.ID}}</a></td>
                 <td>{{city.Name}}</td>
                 <td>{{city.CreatedBy}}</td>
                 <td>{{city.CreatedOn}}</td>
                 <td>{{city.ModifiedBy}}</td>
                 <td>{{city.ModifiedOn}}</td>
+                <td><a [routerLink]="['View/', city.ID]">View</a> | <a (click)="delete($event, city.ID)" href="#">Delete</a></td>
             </tr>
         }
     </tbody>

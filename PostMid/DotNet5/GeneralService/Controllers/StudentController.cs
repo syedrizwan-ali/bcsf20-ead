@@ -44,5 +44,16 @@ namespace GeneralService.Controllers
                 return result;
             }
         }
+        [HttpPost]
+        public Student Save(Student student)
+        {
+            return student;
+        }
+
+        [HttpPut, Route("{id}")]
+        public Student Update(long id, Student student)
+        {
+            return student;
+        }
     }
 }

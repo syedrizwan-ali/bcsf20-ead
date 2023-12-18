@@ -1,3 +1,4 @@
+using GeneralService.Infrastructures;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -20,7 +21,14 @@ namespace GeneralService
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    var configurationRoot = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: false).Build();
+                    var configuration = new ConfigurationBuilder().AddConfiguration(configurationRoot).Build();
+
+                    webBuilder.ConfigureAppConfiguration(x => x.AddConfiguration(configuration)).UseStartup<Startup>();
+
+                    var serviceConfig = new ServiceConfiguration();
+                    configuration.GetSection("ServiceConfiguration").Bind(serviceConfig);
+                    webBuilder.UseUrls(serviceConfig.Url);
                 });
     }
 }

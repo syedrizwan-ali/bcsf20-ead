@@ -1,1 +1,5 @@
-<p>city-add-edit works!</p>
+<h2>{{title}}</h2>
+
+<label>ID: </label> {{model.ID}} <br>
+<label>Name: </label><input type="text" [(ngModel)]="model.Name"> <br/>
+<button (click)="save($event)">Save</button><button (click)="cancel($event)">Cancel</button>

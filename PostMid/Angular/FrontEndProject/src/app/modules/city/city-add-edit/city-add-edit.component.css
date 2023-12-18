@@ -1,0 +1,14 @@
+label{
+    margin-top: 4px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+input{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+button{
+    margin-right: 8px;
+}
