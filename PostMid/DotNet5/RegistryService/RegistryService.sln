@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegistryService", "RegistryService.csproj", "{724FA840-4987-454C-9CA4-FFFC12C4AEAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{F5465265-2FF3-42AE-87DF-62E56372B56D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Commons", "..\Libraries\Commons\Commons.csproj", "{61346977-70B6-49B6-BFD5-9FDAA9883E9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{724FA840-4987-454C-9CA4-FFFC12C4AEAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724FA840-4987-454C-9CA4-FFFC12C4AEAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724FA840-4987-454C-9CA4-FFFC12C4AEAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724FA840-4987-454C-9CA4-FFFC12C4AEAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61346977-70B6-49B6-BFD5-9FDAA9883E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61346977-70B6-49B6-BFD5-9FDAA9883E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61346977-70B6-49B6-BFD5-9FDAA9883E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61346977-70B6-49B6-BFD5-9FDAA9883E9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61346977-70B6-49B6-BFD5-9FDAA9883E9E} = {F5465265-2FF3-42AE-87DF-62E56372B56D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39CF7181-0C7A-4817-856D-34EBD718C58A}
+	EndGlobalSection
+EndGlobal

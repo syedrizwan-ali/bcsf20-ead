@@ -1,4 +1,3 @@
-using Commons;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,13 +9,9 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Security.Policy;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace GeneralService
+namespace RegistryService
 {
     public class Startup
     {
@@ -34,7 +29,7 @@ namespace GeneralService
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GeneralService", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RegistryService", Version = "v1" });
             });
 
             services.AddCors(options =>
@@ -58,12 +53,10 @@ namespace GeneralService
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "GeneralService v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RegistryService v1"));
             }
 
             app.UseRouting();
-
-            app.UseCors("AllowAllOrigins");
 
             app.UseAuthorization();
 
@@ -71,33 +64,6 @@ namespace GeneralService
             {
                 endpoints.MapControllers();
             });
-
-            RegistryServiceConfiguration registryConfig = new RegistryServiceConfiguration();
-            Configuration.GetSection(RegistryServiceConfiguration.ConfigSection).Bind(registryConfig);
-
-            ServiceConfiguration serviceConfig = new ServiceConfiguration();
-            Configuration.GetSection(ServiceConfiguration.ConfigSection).Bind(serviceConfig);
-
-            using(var httpClient = new HttpClient())
-            {
-                var cityController = new
-                {
-                    ServiceName = "GeneralService",
-                    Url = serviceConfig.Url + "/api/City",
-                    ControllerName = "CityController"
-                };
-
-                var result = httpClient.PostAsJsonAsync(registryConfig.Url + "/api/Registry/Register", cityController).Result;
-
-                try
-                {
-                    result.EnsureSuccessStatusCode();
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-            }
         }
     }
 }
